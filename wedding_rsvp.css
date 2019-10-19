@@ -49,58 +49,61 @@ h1::before {
 	z-index: -1;
 }
 
-.scroll_container {
-	/*background: grey;*/
-	width: 100%;
-	height: 50px;
-	position: absolute;
-	top: 100vh;
-	transform: translateY(-400%);
-}
 
-.chevron {
-	margin: 0 auto;
-	/*background: lightblue;*/
-	width: 50px;
-	height: 50px;
-	position: absolute;
-	left: 0;
-	right: 0;
-	top: -120%;
-	border-right: 10px solid black;
-	border-bottom: 10px solid black;
-	transform: rotate(45deg);
-}
-
-.chevron_msg {
-	position: absolute;
-	top: 150%;
-	left: 0;
-	right: 0;
-	font-size: 1.5em;
-}
-
+/* Chevron Styles */
 @keyframes slide {
 	0% {
-		top: -120%;
+		transform: rotate(135deg) translate(0, 0);
 		opacity: 0;
 	}
 
 	70% {
-		top: -10%;
+		transform: rotate(135deg) translate(45px, -45px);
 		opacity: 1;
 	}
 
 	80% {
-		top: 0;
+		transform: rotate(135deg) translate(50px, -50px);
+		opacity: 1;
+	}
+
+	90% {
 		opacity: 1;
 	}
 
 	100% {
-		top: -30%;
+		transform: rotate(135deg) translate(35px, -35px);
 		opacity: 0;
 	}
 }
+
+.position_bottom {
+	position: absolute;
+    left: 0;
+    right: 0;
+    top: 60vh;
+}
+
+.scroll_container {
+	display: inline-block;
+/*	background-color: ivory;*/
+	padding: 0 10px;
+	cursor: pointer;
+}
+
 .chevron {
-	animation: slide 2.5s infinite;
+	width: 50px;
+	height: 50px;
+	/*background-color: purple;*/
+	margin: 0 auto;
+	transform: rotate(135deg);
+	border-top: 10px solid black;
+	border-right: 10px solid black;
+	margin-bottom: 90px;
+	animation: slide 2s infinite;
+}
+
+.msg {
+	/*background-color: orange;*/
+	font-size: 1.5em;
 }
