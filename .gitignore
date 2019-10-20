@@ -1,3 +1,5 @@
 imgs/
 node_modules/
 ./wedding_rsvp.html
+./wedding_rsvp.css
+./wedding_rsvp.js
