@@ -1,0 +1,22 @@
+{
+  "name": "wedding_rsvp_app",
+  "version": "1.0.0",
+  "description": "Web App for sending RSVPs",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hadolas/RSVP-Website.git"
+  },
+  "author": "hadolas",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hadolas/RSVP-Website/issues"
+  },
+  "homepage": "https://github.com/hadolas/RSVP-Website#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
