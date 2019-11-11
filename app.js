@@ -22,6 +22,7 @@ app.post("/send", function(req, res) {
 	"<ul>" +
 		"<li>Name: " + req.body.email.fname + req.body.email.lname + "</li>" +
 		"<li>Email:" + req.body.email.email +  "</li>" +
+		"<li>Number of guests attending:" + req.body.email.guest_number +  "</li>" +
 	"</ul>";
 
 	var data = {
@@ -31,21 +32,22 @@ app.post("/send", function(req, res) {
 		html: output
 	};
 
-	// mailgun.messages().send(data, function (error, body) {
-	// 	if(error) {
-	// 		console.log(error);
-	// 	}
-	// 	console.log(body);
-	// 	res.redirect("/");
-	// });
+	mailgun.messages().send(data, function (error, body) {
+		if(error) {
+			console.log(error);
+		}
+		console.log(body);
+		res.redirect("/");
+	});
 
-	if(data){
-		console.log("Email sent. YAY!");
-		console.log(output);
-		res.redirect("/");	
-	} else {
-		console.log("THERE WAS AN ERROR");
-	}
+	// if(data){
+	// 	console.log("Email sent. YAY!");
+	// 	console.log(output);
+	// 	console.log(req.body.email.guest_number);
+	// 	res.redirect("/");	
+	// } else {
+	// 	console.log("THERE WAS AN ERROR");
+	// }
 	
 });
 

@@ -5,6 +5,7 @@ body {
 	text-align: center;
 	font-family: 'Satisfy';
 	font-weight: bold;
+	overflow: hidden;
 }
 
 section {
@@ -153,6 +154,19 @@ form {
 	position: relative;
 	width: 500px;
 	margin: 20vh auto 0 auto;
+	text-align: left;
+}
+
+form label {
+	display: inline-block;
+	text-align: left;
+	/*margin-left: 20px;*/
+	width: 115px;
+}
+
+form ul {
+	list-style-type: none;
+	padding: 0;
 }
 
 /*form::before {
@@ -170,13 +184,14 @@ form {
 .input_container {
 	padding: 10px 0;
 	display: block;
+	margin-left: 20px;
 	/*background: blue;*/
 }
 
 label {
-	display: inline-block;
-	text-align: center;
-	width: 100px;
+	/*display: inline-block;*/
+	/*text-align: center;*/
+	/*width: 115px;*/
 }
 
 input {
@@ -185,9 +200,39 @@ input {
 	padding: 2px 5px;
 }
 
+.wide_label {
+	width: 150px;
+	/*display: block;*/
+	/*margin: 0;*/
+}
+
+.short_label {
+	width: 80px;
+}
+
 input:focus {
 	outline: none;
 	border: 1px solid black;
+}
+
+form button {
+	background: black;
+	color: white;
+	border: none;
+	padding: 5px 0;
+	display: block;
+    width: 100px;
+    margin-right: 47px;
+    margin-left: auto;
+}
+
+select {
+	margin-right: 260px;
+}
+
+.small_input {
+	width: 160px;
+	margin: 0 2px;
 }
 
 form .submit {

@@ -12,7 +12,7 @@
 				</div>	
 			</div>
 			<div>
-				<form action="/send" method="POST" class="responders_form">
+<!-- 				<form action="/send" method="POST" class="responders_form">
 					<div class="input_container">
 						<label>Your First Name : </label>
 						<input type="text" name="email[fname]">	
@@ -26,6 +26,63 @@
 						<input type="text" name="email[email]">	
 					</div>
 					<input class="submit" type="submit" name="" value="Submit">
+				</form> -->
+
+				<form action="/send" method="POST" class="responders_form">
+					<ul>
+						<li class="form_step">
+							<div class="input_container">
+								<label>Your First Name : </label>
+								<input type="text" name="email[fname]">	
+							</div>
+							<div class="input_container">
+								<label>Your Last Name : </label>
+								<input type="text" name="email[lname]">	
+							</div>
+							<div class="input_container">
+								<label>Email : </label>
+								<input type="text" name="email[email]">	
+							</div>
+							<button class="next" type="button">Next</button>
+						</li>
+						<li class="form_step">
+							<div class="input_container">
+								<label class="wide_label">No. of Guests Attending : </label>
+								<!-- <input type="number" name="" min="0" max="6">	 -->
+								<select name="email[guest_number]">
+									<option value="0">0</option>
+									<option value="1">1</option>
+									<option value="2">2</option>
+									<option value="3">3</option>
+									<option value="4">4</option>
+									<option value="5">5</option>
+									<option value="6">6</option>
+								</select>
+							</div>
+							<hr>
+							<div class="input_container">
+								Names of Guests Attending
+							</div>
+							<div class="input_container">
+								<label class="short_label">Guest 1 : </label>
+								<input class="small_input" type="text" name="" placeholder="First Name">
+								<input class="small_input" type="text" name="" placeholder="Last Name">
+							</div>
+<!-- 							<div class="input_container">
+								<label>Your First Name : </label>
+								<input type="text" name="email[fname]">	
+							</div>
+							<div class="input_container">
+								<label>Your First Name : </label>
+								<input type="text" name="email[fname]">	
+							</div>
+							<div class="input_container">
+								<label>Your First Name : </label>
+								<input type="text" name="email[fname]">	
+							</div> -->
+							<button class="next">Submit</button>
+						</li>
+					</ul>
 				</form>
 			</div>
 			
