@@ -224,6 +224,7 @@ form button {
     width: 100px;
     margin-right: 47px;
     margin-left: auto;
+    cursor: pointer;
 }
 
 select {
