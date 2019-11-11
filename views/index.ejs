@@ -12,14 +12,18 @@
 				</div>	
 			</div>
 			<div>
-				<form class="responders_form">
+				<form action="/send" method="POST" class="responders_form">
 					<div class="input_container">
-						<label>Your Name : </label>
-						<input type="text" name="">	
+						<label>Your First Name : </label>
+						<input type="text" name="email[fname]">	
+					</div>
+					<div class="input_container">
+						<label>Your Last Name : </label>
+						<input type="text" name="email[lname]">	
 					</div>
 					<div class="input_container">
 						<label>Email : </label>
-						<input type="text" name="">	
+						<input type="text" name="email[email]">	
 					</div>
 					<input class="submit" type="submit" name="" value="Submit">
 				</form>
