@@ -21,11 +21,8 @@ section {
 	height: 100%;
 	z-index: -1;
 	background-color: pink;
-	/*background: url("./imgs/temp_background.jpg");*/
-	/*background: url("./imgs/anniversary-bloom-blooming-196664.jpg");*/
-	/*background: url("./imgs/flowers-2702451_1920.jpg");*/
-	/*background: url("./imgs/background-1653923_1920.jpg");*/
-	background: url("../imgs/rose-petals.jpg");
+	/*background: url("../imgs/rose-petals.jpg");*/
+	background: url("public/imgs/rose-petals.jpg");
 	background-size: cover;
 	opacity: 0.6;
 }
