@@ -6,8 +6,6 @@ var mailgun = require('mailgun-js')({apiKey: API_KEY, domain: DOMAIN});
 // app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(__dirname+"/public"));
-console.log(__dirname);
-console.log(__dirname+"/public");
 
 // Root route
 app.get("/", function(req, res) {
@@ -17,7 +15,6 @@ app.get("/", function(req, res) {
 
 // POST route for email
 app.post("/send", function(req, res) {
-	// res.send("You have hit the send route!");
 	var output = "<p>You have received a new RSVP.</p>" + 
 	"<h3>Details: </h3>" +
 	"<ul>" +
