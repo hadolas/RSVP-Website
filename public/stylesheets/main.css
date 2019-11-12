@@ -22,7 +22,7 @@ section {
 	z-index: -1;
 	background-color: pink;
 	/*background: url("../imgs/rose-petals.jpg");*/
-	background: url("public/imgs/rose-petals.jpg");
+	background: url("/imgs/rose-petals.jpg");
 	background-size: cover;
 	opacity: 0.6;
 }
