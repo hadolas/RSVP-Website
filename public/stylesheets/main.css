@@ -21,8 +21,7 @@ section {
 	height: 100%;
 	z-index: -1;
 	background-color: pink;
-	/*background: url("../imgs/rose-petals.jpg");*/
-	background: url("imgs/rose-petals.jpg");
+	background: url("../imgs/rose-petals.jpg");
 	background-size: cover;
 	opacity: 0.6;
 }

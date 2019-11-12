@@ -6,7 +6,8 @@ var mailgun = require('mailgun-js')({apiKey: API_KEY, domain: DOMAIN});
 // app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(__dirname+"/public"));
-
+console.log(__dirname);
+console.log(__dirname+"/public");
 
 // Root route
 app.get("/", function(req, res) {
