@@ -30,22 +30,22 @@ app.post("/send", function(req, res) {
 		html: output
 	};
 
-	mailgun.messages().send(data, function (error, body) {
-		if(error) {
-			console.log(error);
-		}
-		console.log(body);
-		res.redirect("/");
-	});
+	// mailgun.messages().send(data, function (error, body) {
+	// 	if(error) {
+	// 		console.log(error);
+	// 	}
+	// 	console.log(body);
+	// 	res.redirect("/");
+	// });
 
-	// if(data){
-	// 	console.log("Email sent. YAY!");
-	// 	console.log(output);
-	// 	console.log(req.body.email.guest_number);
-	// 	res.redirect("/");	
-	// } else {
-	// 	console.log("THERE WAS AN ERROR");
-	// }
+	if(data){
+		console.log("Email sent. YAY!");
+		console.log(output);
+		console.log(req.body.email.guest_number);
+		res.redirect("/");	
+	} else {
+		console.log("THERE WAS AN ERROR");
+	}
 	
 });
 

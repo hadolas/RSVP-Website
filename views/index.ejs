@@ -11,26 +11,12 @@
 					<div class="msg">Send RSVP</div>
 				</div>	
 			</div>
-			<div>
-<!-- 				<form action="/send" method="POST" class="responders_form">
-					<div class="input_container">
-						<label>Your First Name : </label>
-						<input type="text" name="email[fname]">	
-					</div>
-					<div class="input_container">
-						<label>Your Last Name : </label>
-						<input type="text" name="email[lname]">	
-					</div>
-					<div class="input_container">
-						<label>Email : </label>
-						<input type="text" name="email[email]">	
-					</div>
-					<input class="submit" type="submit" name="" value="Submit">
-				</form> -->
-
+		</section>
+		<section>
+			<div class="form_container">
+				<h2>Please complete the form below:</h2>
 				<form action="/send" method="POST" class="responders_form">
-					<ul>
-						<li class="form_step">
+
 							<div class="input_container">
 								<label>Your First Name : </label>
 								<input type="text" name="email[fname]">	
@@ -43,49 +29,75 @@
 								<label>Email : </label>
 								<input type="text" name="email[email]">	
 							</div>
-							<button class="next" type="button">Next</button>
-						</li>
-						<li class="form_step">
+
 							<div class="input_container">
-								<label class="wide_label">No. of Guests Attending : </label>
-								<!-- <input type="number" name="" min="0" max="6">	 -->
-								<select name="email[guest_number]">
-									<option value="0">0</option>
-									<option value="1">1</option>
-									<option value="2">2</option>
-									<option value="3">3</option>
-									<option value="4">4</option>
-									<option value="5">5</option>
-									<option value="6">6</option>
-								</select>
+								<label>No. of Guests Attending (select a number) : </label>
+
+								<div class="radios_container">
+									<div class="indv_radio_container">
+										<input id="zero" name="a" type="radio" value="0"></input>
+										<label for="zero">0</label>
+									</div>
+									<div class="indv_radio_container">
+										<input id="one" name="a" type="radio" value="1"></input>
+										<label for="one">1</label>
+									</div>
+									<div class="indv_radio_container">
+										<input id="two" name="a" type="radio" value="2"></input>
+										<label for="two">2</label>
+									</div>
+									<div class="indv_radio_container">
+										<input id="three" name="a" type="radio" value="3"></input>
+										<label for="three">3</label>
+									</div>
+									<div class="indv_radio_container">
+										<input id="four" name="a" type="radio" value="4"></input>
+										<label for="four">4</label>
+									</div>
+									<div class="indv_radio_container">
+										<input id="five" name="a" type="radio" value="5"></input>
+										<label for="five">5</label>	
+									</div>
+									<div class="indv_radio_container">
+										<input id="six" name="a" type="radio" value="6"></input>
+										<label for="six">6</label>
+									</div>
+								</div>	
+								
 							</div>
-							<hr>
 							<div class="input_container">
-								Names of Guests Attending
+								<label>Names of Guests Attending : </label>
+								<div class="guests_container">
+									<div class="indv_guest_container">
+										<label>Guest 1 : </label>
+										<input type="text" name="">
+									</div>
+									<div class="indv_guest_container">
+										<label>Guest 2 : </label>
+										<input type="text" name="">
+									</div>
+									<div class="indv_guest_container">
+										<label>Guest 3 : </label>
+										<input type="text" name="">
+									</div>
+									<div class="indv_guest_container">
+										<label>Guest 4 : </label>
+										<input type="text" name="">
+									</div>
+									<div class="indv_guest_container">
+										<label>Guest 5 : </label>
+										<input type="text" name="">
+									</div>
+									<div class="indv_guest_container">
+										<label>Guest 6 : </label>
+										<input type="text" name="">
+									</div>
+								</div>
 							</div>
-							<div class="input_container">
-								<label class="short_label">Guest 1 : </label>
-								<input class="small_input" type="text" name="" placeholder="First Name">
-								<input class="small_input" type="text" name="" placeholder="Last Name">
-							</div>
-<!-- 							<div class="input_container">
-								<label>Your First Name : </label>
-								<input type="text" name="email[fname]">	
-							</div>
-							<div class="input_container">
-								<label>Your First Name : </label>
-								<input type="text" name="email[fname]">	
-							</div>
-							<div class="input_container">
-								<label>Your First Name : </label>
-								<input type="text" name="email[fname]">	
-							</div> -->
-							<button class="next">Submit</button>
-						</li>
-					</ul>
+
+							<button class="submit">Submit</button>
 				</form>
 			</div>
-			
 		</section>
 		
 
