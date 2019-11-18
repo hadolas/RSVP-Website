@@ -225,6 +225,10 @@ input[type=radio]:checked+label {
 }
 
 /* Form - Guest's input */
+.guest_names {
+	display: none;
+}
+
 .guests_container {
 	margin-top: 3px;
 }

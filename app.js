@@ -18,34 +18,36 @@ app.post("/send", function(req, res) {
 	var output = "<p>You have received a new RSVP.</p>" + 
 	"<h3>Details: </h3>" +
 	"<ul>" +
-		"<li>Name: " + req.body.email.fname + req.body.email.lname + "</li>" +
-		"<li>Email:" + req.body.email.email +  "</li>" +
-		"<li>Number of guests attending:" + req.body.email.guest_number +  "</li>" +
+		"<li>Name: " + req.body.email.fname + " " + req.body.email.lname + "</li>" +
+		"<li>Email: " + req.body.email.email +  "</li>" +
+		"<li>Number of guests attending: " + req.body.email.guest_number +  "</li>" +
+		"<li>Names of guests attending: " + req.body.email.guest_names +  "</li>" +
 	"</ul>";
 
 	var data = {
 		from: 'Excited User <'+process.env.EMAIL+'>',
 		to: process.env.EMAIL,
-		subject: 'TESTING EMAIL',
+		subject: 'New RSVP Notification',
 		html: output
 	};
 
-	// mailgun.messages().send(data, function (error, body) {
-	// 	if(error) {
-	// 		console.log(error);
-	// 	}
-	// 	console.log(body);
-	// 	res.redirect("/");
-	// });
+	mailgun.messages().send(data, function (error, body) {
+		if(error) {
+			console.log(error);
+		}
+		console.log(body);
+		res.redirect("/");
+	});
 
-	if(data){
-		console.log("Email sent. YAY!");
-		console.log(output);
-		console.log(req.body.email.guest_number);
-		res.redirect("/");	
-	} else {
-		console.log("THERE WAS AN ERROR");
-	}
+	// if(data){
+	// 	console.log("Email sent. YAY!");
+	// 	console.log(output);
+	// 	console.log(req.body.email.guest_number);
+	// 	console.log(req.body.email.guest_names);
+	// 	res.redirect("/");	
+	// } else {
+	// 	console.log("THERE WAS AN ERROR");
+	// }
 	
 });
 
