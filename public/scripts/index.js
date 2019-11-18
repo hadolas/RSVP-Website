@@ -1,24 +1,43 @@
-// Chevron Slide pulling up form
-// var scroll_container = document.querySelector(".scroll_container");
-// var heading_container = document.querySelector(".heading_container");
-// var chevron = document.querySelector(".chevron");
-// var responders_form = document.querySelector(".responders_form");
+// Smooth Scroll
+function smoothScroll(target, duration){
+    // The target section
+    var target = document.querySelector(target);
+    // The Yth pixel of the target section (where the target section begins)
+    var targetPosition = target.getBoundingClientRect().top + window.scrollY;
+    // Current postition
+    var startPosition = window.scrollY;
+    // Total difference between target section and current position
+    var distance = targetPosition - startPosition;
+    var startTime = null;
+    
+    function animation(currentTime) {
+        if(startTime === null){
+            startTime = currentTime;
+        }
+        var timeElapsed = currentTime - startTime;
+        var run = ease(timeElapsed, startPosition, distance, duration);
+        window.scrollTo(0, run);
+        if(timeElapsed < duration){
+            requestAnimationFrame(animation);
+        }
+    }
+    
+    // Easing function animation for scroll
+    function ease(t, b, c, d) {
+        t /= d;
+    	return -c * t*(t-2) + b;
+    };
+  
+    requestAnimationFrame(animation);
+}
 
-// scroll_container.addEventListener("click", function(){
-// 	heading_container.style.animation = "slideHeading 1s forwards";
-// 	scroll_container.style.animation = "slideAndFadeChevron 1s forwards";
-// 	chevron.style.animation = "slide paused";
-// 	responders_form.style.display = "block";
-// 	responders_form.style.animation = "showForm 2s forwards ease-out";
-// });
-
-// Form's 'Next' button logic AND Add Guest divs logic
-// var form = document.querySelector("form");
+// When 'Send RSVP' link is clicked, scroll to form section
+var send_rsvp_link = document.querySelector("#send_rsvp_link");
+send_rsvp_link.addEventListener("click", function(){
+    smoothScroll("#form", 1500);
+});
 
 
-// form.addEventListener("click", function(){
-
-// });
 
 // Logic for Guest Name Inputs
 var radios_container = document.querySelector(".radios_container");

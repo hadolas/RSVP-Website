@@ -90,10 +90,15 @@ h1::before {
 
 .scroll_container {
 	display: inline-block;
-/*	background-color: ivory;*/
+	/*background-color: ivory;*/
 	padding: 0 10px;
-	cursor: pointer;
+	/*cursor: pointer;*/
 	margin-bottom: 20px;
+}
+
+a {
+	color: black;
+	text-decoration: none;
 }
 
 .chevron {
