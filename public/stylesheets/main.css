@@ -119,32 +119,9 @@ a {
 }
 
 
-/* After-Slide Styles */
-@keyframes slideHeading {
-	100% {
-		padding-top: 0;
-	}
-}
-
-@keyframes slideAndFadeChevron {
-	100% {
-		opacity: 0;
-		transform: translateY(-30vh);
-		cursor: default;
-	}
-}
-
-@keyframes showForm {
-	0% {
-		/*transform: translateY(60vh);*/
-		/*margin-top: 100vh;*/
-		/*opacity: 0;*/
-	}
-	100% {
-		/*transform: translateY(30vh);*/
-		/*margin-top: 40px;*/
-		opacity: 1;
-	}
+/* Pass Styles */
+#pass {
+	min-height: 100vh;
 }
 
 /* Form Styles */

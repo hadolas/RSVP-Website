@@ -31,11 +31,11 @@ function smoothScroll(target, duration){
     requestAnimationFrame(animation);
 }
 
-// When 'Send RSVP' link is clicked, scroll to form section
-var send_rsvp_link = document.querySelector("#send_rsvp_link");
-send_rsvp_link.addEventListener("click", function(){
-    smoothScroll("#form", 1500);
-});
+// When 'Send RSVP' link is clicked, scroll to passcode section
+// var send_rsvp_link = document.querySelector("#send_rsvp_link");
+// send_rsvp_link.addEventListener("click", function(){
+//     smoothScroll("#pass", 1500);
+// });
 
 
 

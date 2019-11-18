@@ -6,99 +6,23 @@
 				<h1>Name & Name</h1>
 			</div>
 			<div class="position_bottom">
-				<a id="send_rsvp_link" class="scroll_container" href="#form">
+				<a id="send_rsvp_link" class="scroll_container" href="#pass">
 					<div class="chevron"></div>
 					<div class="msg">Send RSVP</div>
 				</a>	
 			</div>
 		</section>
-		<section id="form">
-			<div class="form_container">
-				<h2>Please complete the form below:</h2>
-				<form action="/send" method="POST" class="responders_form">
-
-							<div class="input_container">
-								<label>Your First Name : </label>
-								<input type="text" name="email[fname]">	
-							</div>
-							<div class="input_container">
-								<label>Your Last Name : </label>
-								<input type="text" name="email[lname]">	
-							</div>
-							<div class="input_container">
-								<label>Email : </label>
-								<input type="text" name="email[email]">	
-							</div>
-
-							<div class="input_container">
-								<label>No. of Guests Attending (select a number) : </label>
-
-								<div class="radios_container">
-									<div class="indv_radio_container">
-										<input id="zero" name="email[guest_number]" type="radio" value="0"></input>
-										<label for="zero">0</label>
-									</div>
-									<div class="indv_radio_container">
-										<input id="one" name="email[guest_number]" type="radio" value="1"></input>
-										<label for="one">1</label>
-									</div>
-									<div class="indv_radio_container">
-										<input id="two" name="email[guest_number]" type="radio" value="2"></input>
-										<label for="two">2</label>
-									</div>
-									<div class="indv_radio_container">
-										<input id="three" name="email[guest_number]" type="radio" value="3"></input>
-										<label for="three">3</label>
-									</div>
-									<div class="indv_radio_container">
-										<input id="four" name="email[guest_number]" type="radio" value="4"></input>
-										<label for="four">4</label>
-									</div>
-									<div class="indv_radio_container">
-										<input id="five" name="email[guest_number]" type="radio" value="5"></input>
-										<label for="five">5</label>	
-									</div>
-									<div class="indv_radio_container">
-										<input id="six" name="email[guest_number]" type="radio" value="6"></input>
-										<label for="six">6</label>
-									</div>
-								</div>	
-								
-							</div>
-							<div class="input_container guest_names">
-								<label>Names of Guests Attending : </label>
-								<div class="guests_container">
-									<div class="indv_guest_container">
-										<label>Guest 1 : </label>
-										<input type="text" name="email[guest_names]">
-									</div>
-									<div class="indv_guest_container">
-										<label>Guest 2 : </label>
-										<input type="text" name="email[guest_names]">
-									</div>
-									<div class="indv_guest_container">
-										<label>Guest 3 : </label>
-										<input type="text" name="email[guest_names]">
-									</div>
-									<div class="indv_guest_container">
-										<label>Guest 4 : </label>
-										<input type="text" name="email[guest_names]">
-									</div>
-									<div class="indv_guest_container">
-										<label>Guest 5 : </label>
-										<input type="text" name="email[guest_names]">
-									</div>
-									<div class="indv_guest_container">
-										<label>Guest 6 : </label>
-										<input type="text" name="email[guest_names]">
-									</div>
-								</div>
-							</div>
-
-							<button class="submit">Submit</button>
+		<section id="pass">
+			
+				<form action="/confirm" method="POST">
+					<label>Passcode : </label>
+					<input type="text" name="code">	
+					<button>Check</button>
 				</form>
-			</div>
+				
+			
 		</section>
 		
-
+		
+		<script type="text/javascript" src="/scripts/scroll.js"></script>
 <% include ./partials/footer %>
