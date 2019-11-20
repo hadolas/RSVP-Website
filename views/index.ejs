@@ -5,24 +5,15 @@
 			<div class="heading_container">
 				<h1><%= NAME_A %> & <%= NAME_B %></h1>
 			</div>
+
 			<div class="position_bottom">
-				<a id="send_rsvp_link" class="scroll_container" href="#pass">
-					<div class="chevron"></div>
-					<div class="msg">Send RSVP</div>
-				</a>	
-			</div>
-		</section>
-		<section id="pass">
-			
 				<form action="/confirm" method="POST">
 					<label>Passcode : </label>
 					<input type="text" name="code">	
 					<button>Check</button>
 				</form>
-				
-			
+			</div>
 		</section>
 		
-		
-		<script type="text/javascript" src="/scripts/scroll.js"></script>
+
 <% include ./partials/footer %>
