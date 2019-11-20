@@ -4,24 +4,45 @@
 	<div class="form_container">
 		<h2>Please complete the form below:</h2>
 		<form action="/send" method="POST" class="responders_form">
-
+			<!-- First Name -->
 			<div class="input_container">
 				<label>Your First Name : </label>
 				<input type="text" name="email[fname]">	
 			</div>
+
+			<!-- Last Name -->
 			<div class="input_container">
 				<label>Your Last Name : </label>
 				<input type="text" name="email[lname]">	
 			</div>
+
+			<!-- Email -->
 			<div class="input_container">
-				<label>Email : </label>
+				<label>Your Email : </label>
 				<input type="text" name="email[email]">	
 			</div>
 
+			<!-- Attending? -->
 			<div class="input_container">
-				<label>No. of Guests Attending (select a number) : </label>
+				<label>Will you be attending? : </label>
+				<div class="radios_container attending">
+					<div class="indv_radio_container">
+						<input id="yes" name="attending" type="radio" value="yes"></input>
+						<label for="yes">Yes</label>
+					</div>
+					<div class="indv_radio_container">
+						<input id="no" name="attending" type="radio" value="no"></input>
+						<label for="no">No</label>
+					</div>
+				</div>
+			</div>
 
-				<div class="radios_container">
+
+			<!-- No. of guests attending -->
+			<div class="input_container guest_number_container">
+				<label>How many guests will be attending with you ? (select a number)</label>
+
+				<div class="radios_container guest_number_inputs">
 					<div class="indv_radio_container">
 						<input id="zero" name="email[guest_number]" type="radio" value="0"></input>
 						<label for="zero">0</label>
@@ -51,11 +72,12 @@
 						<label for="six">6</label>
 					</div>
 				</div>	
-				
 			</div>
-			<div class="input_container guest_names">
-				<label>Names of Guests Attending : </label>
-				<div class="guests_container">
+
+			<!-- Names of guests attending -->
+			<div class="input_container guest_names_container">
+				<label>Names of guests attending with you : </label>
+				<div class="guest_names_inputs">
 					<div class="indv_guest_container">
 						<label>Guest 1 : </label>
 						<input type="text" name="email[guest_names]">
@@ -83,6 +105,7 @@
 				</div>
 			</div>
 
+			<!-- Submit -->
 			<button class="submit">Submit</button>
 		</form>
 	</div>

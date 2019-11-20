@@ -41,7 +41,7 @@ app.get("/send_rsvp", function(req, res) {
 
 
 // POST route for email
-app.post("/send", function(req, res) {
+app.post("/send", middlewareObject.checkVals, function(req, res) {
 	var output = "<p>You have received a new RSVP.</p>" + 
 	"<h3>Details: </h3>" +
 	"<ul>" +

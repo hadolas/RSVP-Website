@@ -119,14 +119,6 @@ input:focus {
 	margin-top: 5px;
 }
 
-/*.indv_radio_container label {
-	text-align: center;
-}*/
-
-/*.indv_radio_container, .indv_radio_container label {
-	cursor: pointer;
-}*/
-
 input[type=radio] {
 	display: none;
 }
@@ -147,12 +139,12 @@ input[type=radio]:checked+label {
 }
 
 /* Form - Guest's input */
-.guest_names {
+.guest_number_container {
 	display: none;
 }
 
-.guests_container {
-	margin-top: 3px;
+.guest_names_container {
+	display: none;
 }
 
 .indv_guest_container {
