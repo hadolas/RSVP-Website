@@ -47,6 +47,7 @@ app.post("/send", middlewareObject.checkVals, function(req, res) {
 	"<ul>" +
 		"<li>Name: " + req.body.email.fname + " " + req.body.email.lname + "</li>" +
 		"<li>Email: " + req.body.email.email +  "</li>" +
+		"<li>Attending: " + req.body.attending +  "</li>" +
 		"<li>Number of guests attending: " + req.body.email.guest_number +  "</li>" +
 		"<li>Names of guests attending: " + req.body.email.guest_names +  "</li>" +
 	"</ul>";
