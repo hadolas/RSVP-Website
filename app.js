@@ -10,7 +10,7 @@ const SESS_LENGTH = 60000 * 30;
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(__dirname+"/public"));
 app.use(expressSession({
-	secret: "luna",
+	secret: process.env.SECRET,
 	resave: false,
     saveUninitialized: false,
     cookie: {
@@ -20,7 +20,7 @@ app.use(expressSession({
 
 // Root route
 app.get("/", function(req, res) {
-	res.render("index.ejs");
+	res.render("index.ejs", {NAME_A:process.env.NAME_A, NAME_B:process.env.NAME_B});
 });
 
 // POST route for passcode
