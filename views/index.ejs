@@ -2,6 +2,18 @@
 
 		<section id="home">
 			<div class="background"></div>
+
+			<% if(error && error.length>0) { %>
+				<div class="error">
+					<%= error %>
+				</div>
+			<% } %>
+			<% if(success && success.length>0) { %>
+				<div class="success">
+					<%= success %>
+				</div>
+			<% } %>
+
 			<div class="heading_container">
 				<h1><%= NAME_A %> & <%= NAME_B %></h1>
 			</div>

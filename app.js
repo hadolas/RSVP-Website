@@ -3,12 +3,14 @@ var app = express();
 var API_KEY = process.env.API_KEY;
 var DOMAIN = process.env.DOMAIN;
 var mailgun = require('mailgun-js')({apiKey: API_KEY, domain: DOMAIN});
+var flash = require("connect-flash")
 var expressSession = require("express-session");
 var middlewareObject = require("./middleware");
 const SESS_LENGTH = 60000 * 30;
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(__dirname+"/public"));
+app.use(flash());
 app.use(expressSession({
 	secret: process.env.SECRET,
 	resave: false,
@@ -20,6 +22,8 @@ app.use(expressSession({
 
 app.use(function(req, res, next) {
 	res.locals.errors = req.session.errors;
+	res.locals.error = req.flash("error");
+	res.locals.success = req.flash("success");
 	next();
 });
 
@@ -44,8 +48,7 @@ app.get("/send_rsvp", function(req, res) {
 			guest_names : []
 		}
 		// console.log("THIS: " + req.body.guest_number)
-		req.session.errors = [];
-		res.render("form.ejs", {errors:req.session.errors, form:form});	
+		res.render("form.ejs", {form:form});	
 	} else {
 		// res.send("Permission Denied");
 		res.redirect("/");
@@ -87,6 +90,7 @@ app.post("/send_rsvp", middlewareObject.checkVals, middlewareObject.validateForm
 		console.log(output);
 		console.log(req.body.email.guest_number);
 		console.log(req.body.email.guest_names);
+		req.flash("success", "RSVP sent successfully!");
 		res.redirect("/");	
 	} else {
 		console.log("THERE WAS AN ERROR");

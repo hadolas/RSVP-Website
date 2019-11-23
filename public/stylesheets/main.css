@@ -195,3 +195,11 @@ input[type=radio]:checked+label {
 	margin: 0;
 	padding: 0;
 }
+
+.success {
+	background: #daeecf;
+	color: green;
+	max-width: 500px;
+	margin: 0 auto;
+	padding: 0 10%;
+}

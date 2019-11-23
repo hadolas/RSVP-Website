@@ -11,6 +11,7 @@ middlewareObject.checkPasscode = function(req, res, next) {
 		req.session.code = 0;
 		console.log("That is not correct........")
 	}
+	req.flash("error", "Incorrect passcode.")
 	res.redirect("/");
 }
 
@@ -48,7 +49,7 @@ middlewareObject.checkVals = function(req, res, next) {
 middlewareObject.validateFormInputs = function(req, res, next) {
 	// var inputErrors = false;
 	var errors = [];
-	req.session.errors=null;
+	// req.session.errors=null;
 
 	var guest_num = Number(req.body.email.guest_number);
 
@@ -114,8 +115,9 @@ middlewareObject.validateFormInputs = function(req, res, next) {
 	if(errors.length===0) {
 		next();
 	} else {
-		req.session.errors = errors;
-		res.render("form.ejs", {errors:req.session.errors, form:form});
+		// req.session.errors = errors;
+		req.flash("error", errors)
+		res.render("form.ejs", {error:errors, form:form});
 	}
 
 

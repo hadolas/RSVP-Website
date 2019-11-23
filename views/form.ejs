@@ -4,11 +4,12 @@
 	<div class="form_container">
 		<h2>Please complete the form below:</h2>
 
-		<% if(errors && errors.length>0) { %>
+		<% if(error && error.length>0) { %>
+		<!-- <%= error.length %> -->
 			<div class="error">
 				<ul>
-					<% for(var i=0; i<errors.length; i++) { %>
-						<li><%= errors[i] %></li>
+					<% for(var i=0; i<error.length; i++) { %>
+						<li><%= error[i] %></li>
 					<% } %>
 				</ul>
 			</div>
