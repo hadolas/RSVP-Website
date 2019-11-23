@@ -262,7 +262,7 @@ button.submit {
 	color: red;
 	max-width: 500px;
 	margin: 0 auto;
-	padding: 0 10%;
+	padding: 20px 10%;
 }
 
 .error ul {
@@ -276,5 +276,5 @@ button.submit {
 	color: green;
 	max-width: 500px;
 	margin: 0 auto;
-	padding: 0 10%;
+	padding: 20px 10%;
 }
