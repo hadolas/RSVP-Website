@@ -1,7 +1,7 @@
 <% include ./partials/header %>
 
 <section id="form">
-	<div class="form_container">
+	<!-- <div class="form_container"> -->
 		<h2>Please complete the form below:</h2>
 
 		<% if(error && error.length>0) { %>
@@ -18,25 +18,25 @@
 		<form action="/send_rsvp" method="POST" class="responders_form">
 			<!-- First Name -->
 			<div class="input_container">
-				<label>Your First Name : </label>
+				<label>Your First Name: </label>
 				<input type="text" name="email[fname]" value="<%=form.fname%>">	
 			</div>
 
 			<!-- Last Name -->
 			<div class="input_container">
-				<label>Your Last Name : </label>
+				<label>Your Last Name: </label>
 				<input type="text" name="email[lname]" value="<%=form.lname%>">	
 			</div>
 
 			<!-- Email -->
 			<div class="input_container">
-				<label>Your Email : </label>
+				<label>Your Email: </label>
 				<input type="text" name="email[email]" value="<%=form.email%>">	
 			</div>
 
 			<!-- Attending? -->
 			<div class="input_container">
-				<label>Will you be attending? : </label>
+				<label>Will you be attending? </label>
 				<div class="radios_container attending">
 					<div class="indv_radio_container">
 						<input id="yes" name="attending" type="radio" value="yes" <% if(form.attending==="yes") { %><%= "checked" %><% } %>></input>
@@ -52,7 +52,7 @@
 
 			<!-- No. of guests attending -->
 			<div class="input_container guest_number_container">
-				<label>How many guests will be attending with you ? (select a number)</label>
+				<label>How many guests will be attending with you? (select a number)</label>
 
 				<div class="radios_container guest_number_inputs">
 					<div class="indv_radio_container">
@@ -88,7 +88,7 @@
 
 			<!-- Names of guests attending -->
 			<div class="input_container guest_names_container">
-				<label>Names of guests attending with you : </label>
+				<label>Names of guests attending with you: </label>
 				<div class="guest_names_inputs">
 					<div class="indv_guest_container">
 						<label>Guest 1 : </label>
@@ -120,7 +120,7 @@
 			<!-- Submit -->
 			<button class="submit">Submit</button>
 		</form>
-	</div>
+	<!-- </div> -->
 </section>
 
 	<script type="text/javascript" src="/scripts/formDynamics.js"></script>

@@ -1,9 +1,10 @@
 body {
-	background: lightblue;
+	background: #fdf6e1 url("https://res.cloudinary.com/dk43bsw7p/image/upload/v1574550735/wedding_rsvp_app/background.jpg");
 	margin: 0;
 	height: 100vh;
 	text-align: center;
-	font-family: 'Satisfy';
+	/*font-family: 'Satisfy';*/
+	font-family: 'Sorts Mill Goudy';
 	font-weight: bold;
 	/*overflow: hidden;*/
 }
@@ -14,33 +15,76 @@ body {
 
 /* Home Styles */
 .background {
+	/*position: absolute;*/
+	/*top: 0;*/
+	/*left: 0;*/
+	/*width: 100%;*/
+	/*height: 100%;*/
+	/*z-index: -1;*/
+	/*background-color: pink;*/
+	/*background: url("../imgs/rose-petals.jpg");*/
+	/*background: url("https://res.cloudinary.com/dk43bsw7p/image/upload/v1573575732/wedding_rsvp_app/rose-petals.jpg");*/
+	/*background: url("../imgs/background.jpg");*/
+	/*background-size: cover;*/
+	/*opacity: 0.6;*/
+}
+
+.rose_red {
 	position: absolute;
 	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
-	z-index: -1;
-	background-color: pink;
-	/*background: url("../imgs/rose-petals.jpg");*/
-	background: url("https://res.cloudinary.com/dk43bsw7p/image/upload/v1573575732/wedding_rsvp_app/rose-petals.jpg");
+	right: 0;
+	background: url("https://res.cloudinary.com/dk43bsw7p/image/upload/v1574550736/wedding_rsvp_app/red_rose.png");
 	background-size: cover;
-	opacity: 0.6;
+	/*width: 733.513px;*/
+	/*height: 524.158px;*/
+	width: 418.640px;
+	height: 299.154px;
+	opacity: 0.5;
+	z-index: -1;
+	/*width: 0;*/
+	/*padding-right: 30%;*/
+}
+
+.flower_pink {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	background: url("https://res.cloudinary.com/dk43bsw7p/image/upload/v1574550735/wedding_rsvp_app/pink_flower.png");
+	background-size: cover;
+	/*width: 733.513px;*/
+	/*height: 524.158px;*/
+	width: 203.370px;
+	height: 415.523px;
+	opacity: 0.5;
+	z-index: -1;
+	/*width: 0;*/
+	/*padding-right: 30%;*/
 }
 
 .heading_container {
 	position: relative;
-	padding-top: 30vh;
+	padding-top: 20px;
+	/*padding-top: 30vh;*/
+	/*margin-left: 40px;*/
 }
 
 h1 {
-	padding: 30px 0;
+	padding: 10px 40px;
 	margin: 0;
-	font-size: 3em;
+	font-size: 4em;
+	/*font-weight: normal;*/
 	position: relative;
 	letter-spacing: 3px;
+	/*text-align: left;*/
 }
 
-h1::before {
+h2 {
+	/*p*/
+	font-size: 2.5em;
+	margin: 0;
+}
+
+/*h1::before {
 	content: "";
 	position: absolute;
 	top: 0;
@@ -50,36 +94,58 @@ h1::before {
 	background-color: ivory;
 	opacity: 0.5;
 	z-index: -1;
-}
-
-
-/* Chevron Styles */
-.position_bottom {
-	position: absolute;
-    left: 0;
-    right: 0;
-    /*top: 60vh;*/
-    bottom: 0;
-}
-
+}*/
 
 
 /* Form Styles */
-.form_container {
-	width: 80%;
-	margin: 0 auto 40px;
+.passcode_form {
+	display: inline-block;
+	min-width: 300px;
+	position: absolute;
+    left: 0;
+    right: 0;
+    top: 50vh;
 }
 
-.form_container h2 {
+.passcode_form form label {
+	display: block;
+	font-size: 1.5em;
+	font-weight: normal;
+	/*text-align: left;*/
+}
+
+
+
+.same_line input{
+	/*width: 80%;*/
+	height: 26px;
+	padding-left: 5px;
+	width: 220px
+}
+
+
+
+
+/*.form_container {
+	width: 80%;
+	margin: 0 auto 40px;
+}*/
+
+#form h2 {
 	padding: 40px 0 20px 0;
+	/*font-size: 2em;*/
 }
 
 form {
-	background: ivory;
-	padding: 40px 10%;
+	/*background: ivory;*/
+	/*padding: 40px 10%;*/
 	max-width: 500px;
 	margin: 0 auto;
 	font-size: 1.1em;
+}
+
+#form form {
+	padding: 40px 10%;
 }
 
 input:focus {
@@ -166,19 +232,28 @@ input[type=radio]:checked+label {
 	width: 80%;
 }
 
-/* Form - Submit Button */
-.submit {
-	width: 100%;
+/* Form Button Styles */
+button {
 	background: black;
 	color: white;
-	border: 1px solid black;
-	padding: 10px 0;
-	margin-top: 10px;
+	border: none;
+	transition: 0.3s linear;
 }
 
-.submit:focus, .submit:hover {
-	outline: 0.5rem double black;
+button:hover {
 	cursor: pointer;
+	background: coral;
+}
+
+.same_line button {
+	height: 30px;
+	width: 60px;
+}
+
+button.submit {
+	width: 100%;
+	padding: 10px 0;
+	margin-top: 10px;
 }
 
 /* Feedback */
