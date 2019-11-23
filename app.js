@@ -37,7 +37,7 @@ app.post("/confirm", middlewareObject.checkPasscode, function(req, res) {
 	res.redirect("/send_rsvp");
 });
 
-app.get("/send_rsvp", function(req, res) {
+app.get("/send_rsvp", middlewareObject.checkPasscode, function(req, res) {
 	if(req.session.code) {
 		var form = {
 			fname : "",
@@ -59,7 +59,7 @@ app.get("/send_rsvp", function(req, res) {
 
 
 // POST route for email
-app.post("/send_rsvp", middlewareObject.checkVals, middlewareObject.validateFormInputs, function(req, res) {
+app.post("/send_rsvp", middlewareObject.checkPasscode, middlewareObject.checkVals, middlewareObject.validateFormInputs, function(req, res) {
 	var output = "<p>You have received a new RSVP.</p>" + 
 	"<h3>Details: </h3>" +
 	"<ul>" +

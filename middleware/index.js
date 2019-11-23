@@ -4,15 +4,17 @@ var middlewareObject = {}
 
 middlewareObject.checkPasscode = function(req, res, next) {
 	if(req.body.code===process.env.CODE) {
-		// console.log(" >>>>  Correct <<<< ")
-		req.session.code = 1;
+		req.session.code = req.body.code;
 		return next()
+	} else if(req.session.code===process.env.CODE){
+		return next();
 	} else {
-		req.session.code = 0;
+		// req.session.code = 0;
 		console.log("That is not correct........")
+		req.flash("error", "Please enter the correct passcode to continue.")
+		res.redirect("/");
 	}
-	req.flash("error", "Incorrect passcode.")
-	res.redirect("/");
+	
 }
 
 middlewareObject.checkVals = function(req, res, next) {
