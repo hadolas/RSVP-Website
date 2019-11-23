@@ -18,6 +18,11 @@ app.use(expressSession({
     }
 }));
 
+app.use(function(req, res, next) {
+	res.locals.errors = req.session.errors;
+	next();
+});
+
 // Root route
 app.get("/", function(req, res) {
 	res.render("index.ejs", {NAME_A:process.env.NAME_A, NAME_B:process.env.NAME_B});
@@ -30,7 +35,17 @@ app.post("/confirm", middlewareObject.checkPasscode, function(req, res) {
 
 app.get("/send_rsvp", function(req, res) {
 	if(req.session.code) {
-		res.render("form.ejs");	
+		var form = {
+			fname : "",
+			lname : "",
+			email : "",
+			attending : undefined,
+			guest_num : undefined,
+			guest_names : []
+		}
+		// console.log("THIS: " + req.body.guest_number)
+		req.session.errors = [];
+		res.render("form.ejs", {errors:req.session.errors, form:form});	
 	} else {
 		// res.send("Permission Denied");
 		res.redirect("/");
@@ -41,7 +56,7 @@ app.get("/send_rsvp", function(req, res) {
 
 
 // POST route for email
-app.post("/send", middlewareObject.checkVals, function(req, res) {
+app.post("/send_rsvp", middlewareObject.checkVals, middlewareObject.validateFormInputs, function(req, res) {
 	var output = "<p>You have received a new RSVP.</p>" + 
 	"<h3>Details: </h3>" +
 	"<ul>" +
@@ -59,23 +74,23 @@ app.post("/send", middlewareObject.checkVals, function(req, res) {
 		html: output
 	};
 
-	mailgun.messages().send(data, function (error, body) {
-		if(error) {
-			console.log(error);
-		}
-		console.log(body);
-		res.redirect("/");
-	});
+	// mailgun.messages().send(data, function (error, body) {
+	// 	if(error) {
+	// 		console.log(error);
+	// 	}
+	// 	console.log(body);
+	// 	res.redirect("/");
+	// });
 
-	// if(data){
-	// 	console.log("Email sent. YAY!");
-	// 	console.log(output);
-	// 	console.log(req.body.email.guest_number);
-	// 	console.log(req.body.email.guest_names);
-	// 	res.redirect("/");	
-	// } else {
-	// 	console.log("THERE WAS AN ERROR");
-	// }
+	if(data){
+		console.log("Email sent. YAY!");
+		console.log(output);
+		console.log(req.body.email.guest_number);
+		console.log(req.body.email.guest_names);
+		res.redirect("/");	
+	} else {
+		console.log("THERE WAS AN ERROR");
+	}
 	
 });
 

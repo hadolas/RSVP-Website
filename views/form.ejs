@@ -3,23 +3,34 @@
 <section id="form">
 	<div class="form_container">
 		<h2>Please complete the form below:</h2>
-		<form action="/send" method="POST" class="responders_form">
+
+		<% if(errors && errors.length>0) { %>
+			<div class="error">
+				<ul>
+					<% for(var i=0; i<errors.length; i++) { %>
+						<li><%= errors[i] %></li>
+					<% } %>
+				</ul>
+			</div>
+		<% } %>
+
+		<form action="/send_rsvp" method="POST" class="responders_form">
 			<!-- First Name -->
 			<div class="input_container">
 				<label>Your First Name : </label>
-				<input type="text" name="email[fname]">	
+				<input type="text" name="email[fname]" value="<%=form.fname%>">	
 			</div>
 
 			<!-- Last Name -->
 			<div class="input_container">
 				<label>Your Last Name : </label>
-				<input type="text" name="email[lname]">	
+				<input type="text" name="email[lname]" value="<%=form.lname%>">	
 			</div>
 
 			<!-- Email -->
 			<div class="input_container">
 				<label>Your Email : </label>
-				<input type="text" name="email[email]">	
+				<input type="text" name="email[email]" value="<%=form.email%>">	
 			</div>
 
 			<!-- Attending? -->
@@ -27,11 +38,11 @@
 				<label>Will you be attending? : </label>
 				<div class="radios_container attending">
 					<div class="indv_radio_container">
-						<input id="yes" name="attending" type="radio" value="yes"></input>
+						<input id="yes" name="attending" type="radio" value="yes" <% if(form.attending==="yes") { %><%= "checked" %><% } %>></input>
 						<label for="yes">Yes</label>
 					</div>
 					<div class="indv_radio_container">
-						<input id="no" name="attending" type="radio" value="no"></input>
+						<input id="no" name="attending" type="radio" value="no" <% if(form.attending==="no") { %><%= "checked" %><% } %>></input>
 						<label for="no">No</label>
 					</div>
 				</div>
@@ -44,31 +55,31 @@
 
 				<div class="radios_container guest_number_inputs">
 					<div class="indv_radio_container">
-						<input id="zero" name="email[guest_number]" type="radio" value="0"></input>
+						<input class="guest_num" id="zero" name="email[guest_number]" type="radio" value="0" <% if(form.guest_num===0) { %><%= "checked" %><% } %>></input>
 						<label for="zero">0</label>
 					</div>
 					<div class="indv_radio_container">
-						<input id="one" name="email[guest_number]" type="radio" value="1"></input>
+						<input class="guest_num" id="one" name="email[guest_number]" type="radio" value="1" <% if(form.guest_num===1) { %><%= "checked" %><% } %>></input>
 						<label for="one">1</label>
 					</div>
 					<div class="indv_radio_container">
-						<input id="two" name="email[guest_number]" type="radio" value="2"></input>
+						<input class="guest_num" id="two" name="email[guest_number]" type="radio" value="2" <% if(form.guest_num===2) { %><%= "checked" %><% } %>></input>
 						<label for="two">2</label>
 					</div>
 					<div class="indv_radio_container">
-						<input id="three" name="email[guest_number]" type="radio" value="3"></input>
+						<input class="guest_num" id="three" name="email[guest_number]" type="radio" value="3" <% if(form.guest_num===3) { %><%= "checked" %><% } %>></input>
 						<label for="three">3</label>
 					</div>
 					<div class="indv_radio_container">
-						<input id="four" name="email[guest_number]" type="radio" value="4"></input>
+						<input class="guest_num" id="four" name="email[guest_number]" type="radio" value="4" <% if(form.guest_num===4) { %><%= "checked" %><% } %>></input>
 						<label for="four">4</label>
 					</div>
 					<div class="indv_radio_container">
-						<input id="five" name="email[guest_number]" type="radio" value="5"></input>
+						<input class="guest_num" id="five" name="email[guest_number]" type="radio" value="5" <% if(form.guest_num===5) { %><%= "checked" %><% } %>></input>
 						<label for="five">5</label>	
 					</div>
 					<div class="indv_radio_container">
-						<input id="six" name="email[guest_number]" type="radio" value="6"></input>
+						<input class="guest_num" id="six" name="email[guest_number]" type="radio" value="6" <% if(form.guest_num===6) { %><%= "checked" %><% } %>></input>
 						<label for="six">6</label>
 					</div>
 				</div>	
@@ -80,27 +91,27 @@
 				<div class="guest_names_inputs">
 					<div class="indv_guest_container">
 						<label>Guest 1 : </label>
-						<input type="text" name="email[guest_names]">
+						<input type="text" name="email[guest_names]" value="<%=form.guest_names[0]%>">
 					</div>
 					<div class="indv_guest_container">
 						<label>Guest 2 : </label>
-						<input type="text" name="email[guest_names]">
+						<input type="text" name="email[guest_names]" value="<%=form.guest_names[1]%>">
 					</div>
 					<div class="indv_guest_container">
 						<label>Guest 3 : </label>
-						<input type="text" name="email[guest_names]">
+						<input type="text" name="email[guest_names]" value="<%=form.guest_names[2]%>">
 					</div>
 					<div class="indv_guest_container">
 						<label>Guest 4 : </label>
-						<input type="text" name="email[guest_names]">
+						<input type="text" name="email[guest_names]" value="<%=form.guest_names[3]%>">
 					</div>
 					<div class="indv_guest_container">
 						<label>Guest 5 : </label>
-						<input type="text" name="email[guest_names]">
+						<input type="text" name="email[guest_names]" value="<%=form.guest_names[4]%>">
 					</div>
 					<div class="indv_guest_container">
 						<label>Guest 6 : </label>
-						<input type="text" name="email[guest_names]">
+						<input type="text" name="email[guest_names]" value="<%=form.guest_names[5]%>">
 					</div>
 				</div>
 			</div>

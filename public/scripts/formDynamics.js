@@ -5,7 +5,6 @@ var guest_number_inputs = document.querySelectorAll(".guest_number_inputs input[
 
 // var guest_names_container = document.querySelector(".guest_names_container");
 // var radios_container_guest_num = document.querySelector(".radios_container.guest_number_inputs");
-
 radios_container_attending.addEventListener("click", function() {
 	// If a radio button input for 'Attending?' is clicked...
 	if(event.target.tagName==="INPUT") {
@@ -60,3 +59,27 @@ radios_container_guest_num.addEventListener("click", function() {
 		}
 	}
 });
+
+// Logic on page render
+var attending_yes = document.querySelector("#yes")
+
+if(attending_yes.checked) {
+	guest_number_container.style.display = "block";
+}
+
+var guest_nums = document.querySelectorAll(".guest_num")
+var guest_num = document.querySelector(".guest_num:checked")
+console.log(guest_num);
+
+if(guest_num && Number(guest_num.value)!==0){
+	console.log(guest_num.value);
+	guest_names_container.style.display = "block";
+	for(var i=0; i<Number(guest_num.value); i++) {
+		// console.log(guest_nums[i].value);
+		indv_guest_container[i].style.display= "block";
+
+	}
+}
+
+
+// console.log(guest_num.value);

@@ -1,5 +1,5 @@
 body {
-	background: pink;
+	background: lightblue;
 	margin: 0;
 	height: 100vh;
 	text-align: center;
@@ -150,6 +150,7 @@ input[type=radio]:checked+label {
 .indv_guest_container {
 	text-align: left;
 	margin-top: 10px;
+	display: none;
 }
 
 .indv_guest_container label {
@@ -178,4 +179,19 @@ input[type=radio]:checked+label {
 .submit:focus, .submit:hover {
 	outline: 0.5rem double black;
 	cursor: pointer;
+}
+
+/* Feedback */
+.error {
+	background: #f3d9d9;
+	color: red;
+	max-width: 500px;
+	margin: 0 auto;
+	padding: 0 10%;
+}
+
+.error ul {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
 }
