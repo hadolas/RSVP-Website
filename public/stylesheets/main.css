@@ -128,7 +128,7 @@ input:focus {
 	.same_line input {
 		display: block;
 		width: 90%;
-		margin: 0 auto;
+		margin: 0 auto 10px;
 	}
 	.same_line button {
 		display: block;
