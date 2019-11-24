@@ -77,24 +77,24 @@ app.post("/send_rsvp", middlewareObject.checkPasscode, middlewareObject.checkVal
 		html: output
 	};
 
-	// mailgun.messages().send(data, function (error, body) {
-	// 	if(error) {
-	// 		console.log(error);
-	// 	}
-	// 	console.log(body);
-	// 	res.redirect("/");
-	// });
+	mailgun.messages().send(data, function (error, body) {
+		if(error) {
+			console.log(error);
+		}
+		console.log(body);
+		res.redirect("/");
+	});
 
-	if(data){
-		console.log("Email sent. YAY!");
-		console.log(output);
-		console.log(req.body.email.guest_number);
-		console.log(req.body.email.guest_names);
-		req.flash("success", "RSVP sent successfully!");
-		res.redirect("/");	
-	} else {
-		console.log("THERE WAS AN ERROR");
-	}
+	// if(data){
+	// 	console.log("Email sent. YAY!");
+	// 	console.log(output);
+	// 	console.log(req.body.email.guest_number);
+	// 	console.log(req.body.email.guest_names);
+	// 	req.flash("success", "RSVP sent successfully!");
+	// 	res.redirect("/");	
+	// } else {
+	// 	console.log("THERE WAS AN ERROR");
+	// }
 	
 });
 
