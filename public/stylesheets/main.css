@@ -3,30 +3,14 @@ body {
 	margin: 0;
 	height: 100vh;
 	text-align: center;
-	/*font-family: 'Satisfy';*/
 	font-family: 'Sorts Mill Goudy';
 	font-weight: bold;
-	/*overflow: hidden;*/
 }
 
-#home {
-	height: 100vh;
-}
 
 /* Home Styles */
-.background {
-	/*position: absolute;*/
-	/*top: 0;*/
-	/*left: 0;*/
-	/*width: 100%;*/
-	/*height: 100%;*/
-	/*z-index: -1;*/
-	/*background-color: pink;*/
-	/*background: url("../imgs/rose-petals.jpg");*/
-	/*background: url("https://res.cloudinary.com/dk43bsw7p/image/upload/v1573575732/wedding_rsvp_app/rose-petals.jpg");*/
-	/*background: url("../imgs/background.jpg");*/
-	/*background-size: cover;*/
-	/*opacity: 0.6;*/
+#home {
+	height: 100vh;
 }
 
 .rose_red {
@@ -35,14 +19,10 @@ body {
 	right: 0;
 	background: url("https://res.cloudinary.com/dk43bsw7p/image/upload/v1574550736/wedding_rsvp_app/red_rose.png");
 	background-size: cover;
-	/*width: 733.513px;*/
-	/*height: 524.158px;*/
 	width: 418.640px;
 	height: 299.154px;
 	opacity: 0.5;
 	z-index: -1;
-	/*width: 0;*/
-	/*padding-right: 30%;*/
 }
 
 .flower_pink {
@@ -51,50 +31,30 @@ body {
 	left: 0;
 	background: url("https://res.cloudinary.com/dk43bsw7p/image/upload/v1574550735/wedding_rsvp_app/pink_flower.png");
 	background-size: cover;
-	/*width: 733.513px;*/
-	/*height: 524.158px;*/
 	width: 203.370px;
 	height: 415.523px;
 	opacity: 0.5;
 	z-index: -1;
-	/*width: 0;*/
-	/*padding-right: 30%;*/
 }
 
 .heading_container {
 	position: relative;
 	padding-top: 20px;
-	/*padding-top: 30vh;*/
-	/*margin-left: 40px;*/
 }
 
 h1 {
 	padding: 10px 40px;
 	margin: 0;
 	font-size: 4em;
-	/*font-weight: normal;*/
 	position: relative;
 	letter-spacing: 3px;
-	/*text-align: left;*/
 }
 
 h2 {
-	/*p*/
 	font-size: 2.5em;
 	margin: 0;
 }
 
-/*h1::before {
-	content: "";
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 130px;
-	background-color: ivory;
-	opacity: 0.5;
-	z-index: -1;
-}*/
 
 
 /* Form Styles */
@@ -111,10 +71,7 @@ h2 {
 	display: block;
 	font-size: 1.5em;
 	font-weight: normal;
-	/*text-align: left;*/
 }
-
-
 
 .same_line input{
 	/*width: 80%;*/
@@ -124,21 +81,12 @@ h2 {
 }
 
 
-
-
-/*.form_container {
-	width: 80%;
-	margin: 0 auto 40px;
-}*/
-
 #form h2 {
 	padding: 40px 0 20px 0;
 	/*font-size: 2em;*/
 }
 
 form {
-	/*background: ivory;*/
-	/*padding: 40px 10%;*/
 	max-width: 500px;
 	margin: 0 auto;
 	font-size: 1.1em;
@@ -149,7 +97,7 @@ form {
 }
 
 input:focus {
-	outline-color: black;
+	outline-color: #000;
 }
 
 .input_container {
@@ -176,11 +124,7 @@ input:focus {
 }
 
 .indv_radio_container {
-	/*background: coral;*/
-	/*margin: 5px; */
 	display: inline-block;
-	/*width: 40px;*/
-	/*padding: 10px 0;*/
 	margin-right: 5px;
 	margin-top: 5px;
 }
@@ -192,16 +136,16 @@ input[type=radio] {
 .indv_radio_container label {
 	width: 20px;
 	height: 20px;
-	background: white;
+	background: #fff;
 	text-align: center;
 	padding: 10px;
 	cursor: pointer;
-	border: 1px solid black;
+	border: 1px solid #000;
 }
 
 input[type=radio]:checked+label {
-	background: black;
-	color: white;
+	background: #000;
+	color: #fff;
 }
 
 /* Form - Guest's input */
@@ -225,24 +169,21 @@ input[type=radio]:checked+label {
 
 .indv_guest_container input {
 	display: inline;
-	/*width: auto;*/
-	/*min-width: 20px;*/
-	/*width: 80%;*/
 	float: right;
 	width: 80%;
 }
 
 /* Form Button Styles */
 button {
-	background: black;
-	color: white;
+	background: #000;
+	color: #fff;
 	border: none;
 	transition: 0.3s linear;
 }
 
 button:hover {
 	cursor: pointer;
-	background: coral;
+	background: #ff7f50;
 }
 
 .same_line button {
@@ -259,7 +200,7 @@ button.submit {
 /* Feedback */
 .error {
 	background: #f3d9d9;
-	color: red;
+	color: #ff0000;
 	max-width: 500px;
 	margin: 0 auto;
 	padding: 20px 10%;
@@ -273,7 +214,7 @@ button.submit {
 
 .success {
 	background: #daeecf;
-	color: green;
+	color: #008000;
 	max-width: 500px;
 	margin: 0 auto;
 	padding: 20px 10%;
