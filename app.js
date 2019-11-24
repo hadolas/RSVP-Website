@@ -82,6 +82,7 @@ app.post("/send_rsvp", middlewareObject.checkPasscode, middlewareObject.checkVal
 			console.log(error);
 		}
 		console.log(body);
+		req.flash("success", "RSVP sent successfully!");
 		res.redirect("/");
 	});
 
