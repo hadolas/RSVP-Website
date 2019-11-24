@@ -63,15 +63,15 @@ app.post("/send_rsvp", middlewareObject.checkPasscode, middlewareObject.checkVal
 	var output = "<p>You have received a new RSVP.</p>" + 
 	"<h3>Details: </h3>" +
 	"<ul>" +
-		"<li>Name: " + req.body.email.fname + " " + req.body.email.lname + "</li>" +
-		"<li>Email: " + req.body.email.email +  "</li>" +
-		"<li>Attending: " + req.body.attending +  "</li>" +
-		"<li>Number of guests attending: " + req.body.email.guest_number +  "</li>" +
-		"<li>Names of guests attending: " + req.body.email.guest_names +  "</li>" +
+		"<strong><li>Name: </strong>" + req.body.email.fname + " " + req.body.email.lname + "</li>" +
+		"<strong><li>Email: </strong>" + req.body.email.email +  "</li>" +
+		"<strong><li>Attending: </strong>" + req.body.attending +  "</li>" +
+		"<strong><li>Number of guests attending: </strong>" + req.body.email.guest_number +  "</li>" +
+		"<strong><li>Names of guests attending: </strong>" + req.body.email.guest_names +  "</li>" +
 	"</ul>";
 
 	var data = {
-		from: 'Excited User <'+process.env.EMAIL+'>',
+		from: 'RSVP Website <'+process.env.EMAIL+'>',
 		to: process.env.EMAIL,
 		subject: 'New RSVP Notification',
 		html: output
