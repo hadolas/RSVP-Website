@@ -123,7 +123,7 @@ input:focus {
 		min-width: 100%;
 	}
 	.passcode_form form label {
-		font-size: 1em;
+		font-size: 1.1em;
 	}
 	.same_line input {
 		display: block;
@@ -148,12 +148,18 @@ input:focus {
 	}
 }
 
-@media (max-height: 550px) and (max-width: 1000px) {
+@media (max-height: 550px) and (max-width: 800px) {
 	h1 {
 		font-size: 3em;
 	}
 	h2 {
 		font-size: 1.8em;
+	}
+	.rose_red {
+		opacity: 0.3;
+	}
+	.flower_pink {
+		display: none;
 	}
 }
 
