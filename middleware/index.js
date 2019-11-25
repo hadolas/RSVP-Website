@@ -64,10 +64,6 @@ middlewareObject.validateFormInputs = function(req, res, next) {
 		guest_names : req.body.email.guest_names
 	}
 
-	// console.log("1 : " + form.guest_names[1])
-
-	// console.log("EMAIL: " + form.email)
-	// console.log("EMAIL: " + req.body.email.email)
 
 	if(!req.body.email.fname) {
 		errors.push("Please enter first name.");
@@ -87,24 +83,13 @@ middlewareObject.validateFormInputs = function(req, res, next) {
 				// console.log("Please select how many guests will be attending with you.");
 				errors.push("Please select how many guests will be attending with you.");
 			} else {
-				// console.log("GUESTNUMBER: " + req.body.email.guest_number)
-				// console.log("GN: " + guest_num)
-				// if(guest_num===0) {
-					// console.log("Zero")
-				// } else if(req.body.email.guest_number>0) {
-					// console.log("PEOPLE")
-				// }
+
 				if(req.body.email.guest_number!==0) {
-					// console.log("Show " + req.body.email.guest_number + "inputs");
-					// console.log("NAAMES: " + req.body.email.guest_names.length)
-					// if(req.body.email.guest_number!==req.body.email.guest_names.length) {
-						// console.log("Please give the names of all guests attending with you.")
-					// }
-					// console.log("names: " + req.body.email.guest_names)
+
 					for(var i=0; i<req.body.email.guest_names.length; i++) {
-						console.log("name: " + req.body.email.guest_names[i]);
+				
 						if(req.body.email.guest_names[i] === "") {
-							console.log("Please give the names of all guests attending with you.");
+							// console.log("Please give the names of all guests attending with you.");
 							errors.push("Please give the names of all guests attending with you.");
 							break;
 						}
@@ -115,6 +100,12 @@ middlewareObject.validateFormInputs = function(req, res, next) {
 	}
 
 	if(errors.length===0) {
+		if(req.body.attending==="no") {
+			req.body.email.guest_number= "-";
+		}
+		if(req.body.email.guest_number===0 | req.body.email.guest_number==="-") {
+			req.body.email.guest_names = "-";
+		}
 		next();
 	} else {
 		// req.session.errors = errors;

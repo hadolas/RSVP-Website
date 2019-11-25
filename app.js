@@ -60,20 +60,24 @@ app.get("/send_rsvp", middlewareObject.checkPasscode, function(req, res) {
 
 // POST route for email
 app.post("/send_rsvp", middlewareObject.checkPasscode, middlewareObject.checkVals, middlewareObject.validateFormInputs, function(req, res) {
+	
+	var full_name = req.body.email.fname + " " + req.body.email.lname;
+
 	var output = "<p>You have received a new RSVP.</p>" + 
 	"<h3>Details: </h3>" +
 	"<ul>" +
-		"<strong><li>Name: </strong>" + req.body.email.fname + " " + req.body.email.lname + "</li>" +
-		"<strong><li>Email: </strong>" + req.body.email.email +  "</li>" +
-		"<strong><li>Attending: </strong>" + req.body.attending +  "</li>" +
-		"<strong><li>Number of guests attending: </strong>" + req.body.email.guest_number +  "</li>" +
-		"<strong><li>Names of guests attending: </strong>" + req.body.email.guest_names +  "</li>" +
+		"<li><p><strong>Name: </strong>" + full_name + "</p></li>" +
+		"<li><p><strong>Email: </strong>" + req.body.email.email +  "</p></li>" +
+		"<li><p><strong>Attending: </strong>" + req.body.attending +  "</p></li>" +
+		"<li><p><strong>Number of guests attending: </strong>" + req.body.email.guest_number +  "</p></li>" +
+		"<li><p><strong>Names of guests attending: </strong>" + req.body.email.guest_names +  "</p></li>" +
 	"</ul>";
 
 	var data = {
-		from: 'RSVP Website <'+process.env.EMAIL+'>',
-		to: process.env.EMAIL,
-		subject: 'New RSVP Notification',
+		from: 'RSVP Website <'+process.env.EMAIL_FROM+'>',
+		to: process.env.EMAIL_A +', '+ process.env.EMAIL_B,
+		// to: process.env.EMAIL_A,
+		subject: 'RSVP from ' + req.body.email.fname + " " + req.body.email.lname,
 		html: output
 	};
 
