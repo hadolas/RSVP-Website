@@ -234,6 +234,7 @@ input[type=radio]:checked+label {
 .indv_guest_container {
 	text-align: left;
 	margin-top: 10px;
+	margin-bottom: 15px;
 	display: none;
 }
 
@@ -245,6 +246,21 @@ input[type=radio]:checked+label {
 	display: inline;
 	float: right;
 	width: 80%;
+}
+
+@media (max-width:500px) {
+	.indv_guest_container input {
+		width: 75%;
+	}
+	#form form {
+		padding: 40px 7%;
+	}
+}
+
+@media (max-width:400px) {
+	.indv_guest_container input {
+		width: 70%;
+	}
 }
 
 /* Form Button Styles */
