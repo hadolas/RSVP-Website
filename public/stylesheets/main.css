@@ -39,11 +39,11 @@ body {
 
 .heading_container {
 	position: relative;
-	padding-top: 20px;
+	padding: 30vh 0 8vh;
 }
 
 h1 {
-	padding: 10px 40px;
+	/*padding: 10px 40px;*/
 	margin: 0;
 	font-size: 4em;
 	position: relative;
@@ -93,11 +93,7 @@ input:focus {
 .passcode_form {
 	display: inline-block;
 	min-width: 300px;
-	position: absolute;
-    left: 0;
-    right: 0;
-    top: 50vh;
-    /*background: pink;*/
+	position: relative;
 }
 
 .passcode_form form label {
@@ -137,18 +133,8 @@ input:focus {
 	}
 }
 
-@media (max-height:380px) {
-	.passcode_form {
-		/*position: absolute;*/
-		/*top: 100vh;*/
-		/*transform: translateY(-110%);*/
-		position: relative;
-		top: auto;
-		margin: 50px 0;
-	}
-}
 
-@media (max-height: 550px) and (max-width: 800px) {
+/*@media (max-height: 550px) and (max-width: 800px) {
 	h1 {
 		font-size: 3em;
 	}
@@ -161,7 +147,7 @@ input:focus {
 	.flower_pink {
 		display: none;
 	}
-}
+}*/
 
 
 /* Form Styles for main form */
