@@ -21,7 +21,7 @@ body {
 	background-size: cover;
 	width: 418.640px;
 	height: 299.154px;
-	opacity: 0.5;
+	opacity: 1;
 	z-index: -1;
 }
 
@@ -33,7 +33,7 @@ body {
 	background-size: cover;
 	width: 203.370px;
 	height: 415.523px;
-	opacity: 0.5;
+	opacity: 1;
 	z-index: -1;
 }
 
@@ -43,7 +43,6 @@ body {
 }
 
 h1 {
-	/*padding: 10px 40px;*/
 	margin: 0;
 	font-size: 4em;
 	position: relative;
@@ -53,12 +52,6 @@ h1 {
 h2 {
 	font-size: 2.5em;
 	margin: 0;
-}
-
-@media (max-width:480px) {
-	h1 {
-		padding: 0;
-	}
 }
 
 @media (max-width:400px) {
@@ -73,6 +66,24 @@ h2 {
 @media (max-width:300px) {
 	h1 {
 		font-size: 2.5em;
+	}
+}
+
+@media(max-height:700px) {
+	.heading_container {
+		padding: 25vh 0 8vh;
+	}
+}
+
+@media(max-height:500px) {
+	.heading_container {
+		padding: 16vh 0 8vh;
+	}
+}
+
+@media(max-height:400px) {
+	.heading_container {
+		padding: 20px 0 8vh;
 	}
 }
 
@@ -103,7 +114,6 @@ input:focus {
 }
 
 .same_line input{
-	/*width: 80%;*/
 	height: 26px;
 	padding-left: 5px;
 	width: 220px
@@ -134,26 +144,9 @@ input:focus {
 }
 
 
-/*@media (max-height: 550px) and (max-width: 800px) {
-	h1 {
-		font-size: 3em;
-	}
-	h2 {
-		font-size: 1.8em;
-	}
-	.rose_red {
-		opacity: 0.3;
-	}
-	.flower_pink {
-		display: none;
-	}
-}*/
-
-
 /* Form Styles for main form */
 #form h2 {
 	padding: 40px 0 20px 0;
-	/*font-size: 2em;*/
 }
 
 #form form {
@@ -177,7 +170,6 @@ input:focus {
 
 /* Form - Radio Styles*/
 .radios_container {
-	/*background: purple;*/
 	padding: 0;
 	text-align: left;
 	margin-top: 3px;
