@@ -37,6 +37,44 @@ body {
 	z-index: -1;
 }
 
+@media(max-width:750px) {
+	.rose_red {
+		opacity: 0.8;
+	}
+}
+
+@media(max-width:600px) and (max-height:500px) {
+	.flower_pink {
+		display: none;
+	}
+	.rose_red {
+		background: url("https://res.cloudinary.com/dk43bsw7p/image/upload/v1575562226/wedding_rsvp_app/red_rose_cropped_bl.png");
+		background-size: cover;
+		top: auto;
+		right: auto;
+		bottom: 0;
+		left: 0;
+	}
+}
+
+@media(max-width:650px), (max-height:650px) {
+	.rose_red {
+		width: 336px;
+		height: 240px;
+	}
+	.flower_pink {
+		width: 160px;
+		height: 332px;
+	}
+}
+
+@media(max-width:350px) {
+	.rose_red {
+		width: 210px;
+		height: 150px;
+	}
+}
+
 .heading_container {
 	position: relative;
 	padding: 30vh 0 8vh;
@@ -50,9 +88,29 @@ h1 {
 }
 
 h2 {
+	position: relative;
 	font-size: 2.5em;
 	margin: 0;
 }
+
+.heading_container h1, .heading_container h2 {
+	margin: 0 auto;
+	display: inline-block;
+}
+
+.heading_container h1::before, .heading_container h2::before, .passcode_form form label::before {
+	content: "";
+	background: #fdf6e2;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	z-index: -1;
+	opacity: 0.7;
+	filter: blur(30px);
+}
+
 
 @media (max-width:400px), (max-height:600px) {
 	h1 {
