@@ -54,7 +54,7 @@ h2 {
 	margin: 0;
 }
 
-@media (max-width:400px) {
+@media (max-width:400px), (max-height:600px) {
 	h1 {
 		font-size: 3em;
 	}
