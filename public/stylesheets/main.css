@@ -1,7 +1,7 @@
 body {
 	background: #fdf6e1 url("https://res.cloudinary.com/dk43bsw7p/image/upload/v1574550735/wedding_rsvp_app/background.jpg");
 	margin: 0;
-	height: 100vh;
+	height: 100%;
 	text-align: center;
 	font-family: 'Sorts Mill Goudy';
 	font-weight: bold;
@@ -10,7 +10,7 @@ body {
 
 /* Home Styles */
 #home {
-	height: 100vh;
+	height: 100%;
 }
 
 .rose_red {
