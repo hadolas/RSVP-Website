@@ -1,7 +1,3 @@
-html {
-	min-height: 100vh;
-}
-
 body {
 	background: #fdf6e1 url("https://res.cloudinary.com/dk43bsw7p/image/upload/v1574550735/wedding_rsvp_app/background.jpg");
 	margin: 0;
@@ -81,7 +77,7 @@ body {
 
 .heading_container {
 	position: relative;
-	padding: 30vh 0 8vh;
+	/*padding: 30vh 0 8vh;*/
 }
 
 h1 {
@@ -133,19 +129,19 @@ h2 {
 
 @media(max-height:700px) {
 	.heading_container {
-		padding: 25vh 0 8vh;
+		/*padding: 25vh 0 8vh;*/
 	}
 }
 
 @media(max-height:500px) {
 	.heading_container {
-		padding: 16vh 0 8vh;
+		/*padding: 16vh 0 8vh;*/
 	}
 }
 
 @media(max-height:400px) {
 	.heading_container {
-		padding: 20px 0 8vh;
+		/*padding: 20px 0 8vh;*/
 	}
 }
 
